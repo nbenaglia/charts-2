@@ -58,3 +58,7 @@ spec:
       nodeSelector:
       {{- toYaml . | nindent 8 }}
       {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+      {{- toYaml . | indent 8 }}
+      {{- end }}
